@@ -1,5 +1,5 @@
 import Food1 from '../../assets/food-1.png'
-import Food2 from '../../assets/food-2.png'
+import Food2 from '../../assets/margherita-pizza.jpg'
 import Food3 from '../../assets/food-3.png'
 import Food4 from '../../assets/food-4.png'
 import ratingStar from '../../assets/ratingStar.png'

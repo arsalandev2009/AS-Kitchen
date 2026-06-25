@@ -2,7 +2,7 @@ import React from "react";
 import {
   Footer,
   Header,
-  Categorycarddata,
+  HomeCategorycarddata,
   HomeProductsCardData,
 } from "../../../component/component";
 import Pic1 from "../../../assets/1.png";
@@ -50,13 +50,13 @@ function Home() {
         <div className="home-content2">
           <h1 className="home-content2-heading">Categories</h1>
           <div className="home-content2-lower">
-            {Categorycarddata.map((item) => (
+            {HomeCategorycarddata.map((item) => (
               <Link to={'/menu'} key={item.key} className="home-content2-cards">
                 <div className="home-content2-image">
                   <img src={item.image} alt={item.name} width={60} />
                 </div>
                 <h3>{item.name}</h3>
-                {item.totalItems && <p>0 {item.totalItems}</p>}
+                {item.totalItems && <p>{item.totalItems}</p>}
               </Link>
             ))}
           </div>
