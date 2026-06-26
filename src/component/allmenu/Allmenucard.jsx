@@ -20,15 +20,15 @@ function Allmenucard({category}) {
     <div className='allmenu-container'>
      {filteredProducts.map((items) => (
               <Link to={`/productsdetail/${items.key}`} key={items.key} className="allmenu-cards">
-                <div classNmae="allmenu-cards-image"><img src={items.image} alt={items.name} width={280}/></div>
+                <div className="allmenu-cards-image">
+                <div className='allmenu-cards-image-discount'>{items.discount}</div>
+                  <img className='allmenu-cards-image-img' src={items.image} alt={items.name} width={280}/>
+                </div>
                 <div className="allmenu-lower">
                   <h2 className="allmenu-cards-h2"> {items.name}</h2>
                 <h4 className="allmenu-cards-p">Rs: {items.price}</h4>
-                <div className="allmenu-cards-rating">
-                  <img src={items.ratingStar} alt={items.name} width={20}/>
-                  <p>{items.rating}</p>
-                </div>
-                <button className='allmenu-button'>Add to Cart</button>
+                <del className="allmenu-cards-rating">Rs: {items.discountedprice}</del>
+                <button className='allmenu-button'>Buy Now</button>
                 </div>
 
               </Link>

@@ -1,0 +1,113 @@
+.myorders-card-container {
+  width: 70%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.myorders-card {
+    background: #fff;
+    border-top: 4px solid #ff8239;
+    border-radius: 10px;
+    padding: 22px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+.myorders-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.myorders-header {
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 15px;
+    margin-bottom: 18px;
+}
+
+.myorders-header h3 {
+    display: inline-block;
+    background: #fff4eb;
+    color: #ff8239;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.myorders-item {
+    padding: 16px 0;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.myorders-item:last-child {
+    border-bottom: none;
+}
+
+.myorders-item-left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.myorders-item-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #222;
+    margin: 0;
+}
+
+.myorders-item-price {
+    font-size: 17px;
+    font-weight: 600;
+    color: #ff8239;
+    margin: 0;
+}
+
+.myorders-footer {
+    margin-top: 18px;
+    padding-top: 15px;
+    border-top: 1px dashed #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.myorders-date,
+.myorders-time {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #fff7f2;
+    color: #555;
+    border: 1px solid #ffd5b5;
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.myorders-empty {
+    width: min(900px, 90%);
+    margin: 80px auto;
+    padding: 60px 20px;
+    text-align: center;
+    background: #fffaf6;
+    border: 2px dashed #ff8239;
+    border-radius: 10px;
+}
+
+.myorders-empty-title {
+    color: #ff8239;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.myorders-empty-text {
+    color: #666;
+    font-size: 17px;
+}

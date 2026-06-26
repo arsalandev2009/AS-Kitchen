@@ -73,7 +73,7 @@ function Home() {
           <div className="home-content3-lower">
             {HomeProductsCardData.map((items) => (
               <Link to={'/menu'} key={items.key} className="home-content3-lower-cards">
-                <div classNmae="home-content3-lower-cards-image"><img src={items.image} alt={items.name} width={280}/></div>
+                <div className="home-content3-lower-cards-image"><img src={items.image} alt={items.name} width={280}/></div>
                 <div className="home-content3-lower-lower">
                   <h2 className="home-content3-lower-cards-h2"> {items.name}</h2>
                 <h4 className="home-content3-lower-cards-p">Rs: {items.price}</h4>

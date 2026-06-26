@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Logo from '../../assets/Logo.png'
 import { NavLink,Link, useNavigate } from 'react-router-dom'
 import { HiOutlineShoppingCart} from 'react-icons/hi'
@@ -9,8 +9,26 @@ import { FiLogOut, FiMenu } from 'react-icons/fi'
 
 function Header() {
 
+const [cartdatalength, setCartdatalength] = useState(
+  JSON.parse(localStorage.getItem('cartdata'))?.length || 0
+);
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    const cart = JSON.parse(localStorage.getItem('cartdata')) || [];
+    setCartdatalength(cart.length);
+  }, 100);
+
+  return () => clearInterval(interval);
+}, []);
+
  const  navigate=useNavigate()
-  const handleLogout=()=>{
+
+ const handleCartButton=()=>{
+  navigate('/cart')
+ }
+
+ const handleLogout=()=>{
      localStorage.removeItem('token');
       // window.location.reload();
       navigate('/')
@@ -30,7 +48,7 @@ setShow(!show)
             <li className='header-right-ul'><NavLink className='header-right-link' to='/menu'>Menu</NavLink></li>
             <li className='header-right-ul'><NavLink className='header-right-link' to='/aboutus'>About Us</NavLink></li>
             <li className='header-right-ul'><NavLink className='header-right-link' to='/contact'>Contact</NavLink></li>
-            <li className='header-right-ul'>  <button className='header-right-button'> <HiOutlineShoppingCart/> Cart ( 0 )</button></li>
+            <li className='header-right-ul'>  <button className='header-right-button' onClick={handleCartButton}> <HiOutlineShoppingCart/> Cart ( {cartdatalength} )</button></li>
             <li className='header-right-ul'>  <button className='header-right-button-user' onClick={handleClickUser}><FiMenu size={30}/> </button></li>
 
 {show && 

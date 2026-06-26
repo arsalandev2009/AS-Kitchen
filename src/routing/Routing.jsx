@@ -1,7 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { About, Home, Menu, Productsdetail } from "../screens/screens";
+import { About, Cart, Checkout, Home, Login, Menu, Myorders, Productsdetail, Signup } from "../screens/screens";
 import { Allmenucard } from "../component/component";
+import ProtectedRouting from "../protectedrouting/ProtectedRouting";
 
 function Routing() {
   return (
@@ -10,6 +11,11 @@ function Routing() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/productsdetail/:key" element={<Productsdetail />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/myorders" element={<Myorders />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/checkout" element={<ProtectedRouting> <Checkout /> </ProtectedRouting>} />
 
           <Route path="/menu" element={<Menu />}>
             <Route index element={<Allmenucard category="all"/>} />
