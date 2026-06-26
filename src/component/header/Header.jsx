@@ -9,29 +9,39 @@ import { FiLogOut, FiMenu } from 'react-icons/fi'
 
 function Header() {
 
-const [cartdatalength, setCartdatalength] = useState(
-  JSON.parse(localStorage.getItem('cartdata'))?.length || 0
-);
-
-useEffect(() => {
-  const interval = setInterval(() => {
-    const cart = JSON.parse(localStorage.getItem('cartdata')) || [];
-    setCartdatalength(cart.length);
-  }, 100);
-
-  return () => clearInterval(interval);
-}, []);
-
+  
+  const userName=  JSON.parse(  localStorage.getItem('user'))||[]
+  
+  const [cartdatalength, setCartdatalength] = useState(
+    JSON.parse(localStorage.getItem('cartdata'))?.length || 0
+  );
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const cart = JSON.parse(localStorage.getItem('cartdata')) || [];
+      setCartdatalength(cart.length);
+    }, 100);
+    
+    return () => clearInterval(interval);
+  }, []);
+  
  const  navigate=useNavigate()
-
+ 
  const handleCartButton=()=>{
-  navigate('/cart')
- }
+   navigate('/cart')
+  }
+  
+  const [showpopup,setShowpopup]=useState(false)
 
- const handleLogout=()=>{
-     localStorage.removeItem('token');
-      // window.location.reload();
+  const handleLogout=()=>{
+ localStorage.removeItem('token');
+      window.location.reload();
       navigate('/')
+  }
+  const handleLogoutpopup=()=>{
+    
+
+      setShowpopup(!showpopup)
   }
   const token =  localStorage.getItem('token');
 
@@ -56,10 +66,10 @@ setShow(!show)
 (<div className='header-user-menu'>
   <ul className='header-user-menu-ul'> 
 
-    <Link  className='header-user-menu-ul-li'> <FaUser /> <p>Your name</p></Link>
+    <Link  className='header-user-menu-ul-li'> <FaUser /> <p>{userName.username}</p></Link>
     <Link to='/myorders' className='header-user-menu-ul-li'> <FaCartPlus/> <p>My Orders</p></Link>
     <hr className='header-user-menu-hr'/>
-    <button onClick={handleLogout} className='header-user-menu-ul-li-button'><FiLogOut/> <p>Logout</p></button>
+    <button onClick={handleLogoutpopup} className='header-user-menu-ul-li-button'><FiLogOut/> <p>Logout</p></button>
   </ul>
 </div>) :
 (<div className='header-user-menu'>
@@ -74,6 +84,35 @@ setShow(!show)
 
         </ul>
       </div>
+{showpopup && (
+    <div className="header-logout-overlay">
+    <div className="header-logout-popup">
+      <h2 className="header-logout-title">Confirm Logout</h2>
+
+      <p className="header-logout-text">
+        Are you sure you want to logout from your account?
+      </p>
+
+      <div className="header-logout-buttons">
+        <button
+          className="header-cancel-btn"
+          onClick={() => setShowLogoutPopup(false)}
+        >
+          <span className="header-cancel-btn-text">Cancel</span>
+        </button>
+
+        <button
+          className="header-logout-btn"
+          onClick={handleLogout}
+        >
+          <span className="header-logout-btn-text">Logout</span>
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
+
     </div>
   )
 }

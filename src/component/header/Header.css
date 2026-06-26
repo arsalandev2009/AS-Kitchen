@@ -4,6 +4,7 @@ padding: 20px 70px 20px 70px;
 align-items: center;
 justify-content: space-between;
 background-color: white;
+
 box-shadow: 0px 0px 5px 0px rgb(153, 153, 153);
 }
 .header-right-ul{
@@ -92,4 +93,94 @@ background: none;
 .header-user-menu-ul-li:hover{
     background-color: rgb(248, 248, 248);
 
+}
+.header-logout-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.header-logout-popup {
+    width: 380px;
+    max-width: 90%;
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px 25px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: headerPopup 0.25s ease;
+}
+
+.header-logout-title {
+    margin: 0 0 12px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #222;
+}
+
+.header-logout-text {
+    margin: 0 0 25px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.header-logout-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.header-cancel-btn,
+.header-logout-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.header-cancel-btn {
+    background: #ececec;
+}
+
+.header-cancel-btn:hover {
+    background: #d9d9d9;
+}
+
+.header-logout-btn {
+    background: #ff5a5a;
+}
+
+.header-logout-btn:hover {
+    background: #e53b3b;
+}
+
+.header-cancel-btn-text,
+.header-logout-btn-text {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.header-cancel-btn-text {
+    color: #333;
+}
+
+.header-logout-btn-text {
+    color: #fff;
+}
+
+@keyframes headerPopup {
+    from {
+        opacity: 0;
+        transform: scale(.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }

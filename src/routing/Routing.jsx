@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { About, Cart, Checkout, Home, Login, Menu, Myorders, Productsdetail, Signup } from "../screens/screens";
+import { About, Cart, Checkout, ErrorPage, Home, Login, Menu, Myorders, Productsdetail, Signup } from "../screens/screens";
 import { Allmenucard } from "../component/component";
 import ProtectedRouting from "../protectedrouting/ProtectedRouting";
 
@@ -14,6 +14,7 @@ function Routing() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />
           <Route path="/myorders" element={<Myorders />} />
+          <Route path="*" element={<ErrorPage />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/checkout" element={<ProtectedRouting> <Checkout /> </ProtectedRouting>} />
 

@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Footer, Header } from "../../../component/component";
 import "./Myorders.css";
 function Myorders() {
+
   const gettingMyorders = JSON.parse(localStorage.getItem("orders")) || [];
+
+  const deleteHistory=()=>{
+      localStorage.removeItem("orders");
+window.location.reload()
+  }
 
   setTimeout(
     () => {
@@ -58,6 +64,16 @@ function Myorders() {
       )}
 
  
+{gettingMyorders.length > 0 && (
+  <div className="myorders-delete-container">
+  <button
+    className="myorders-delete-btn"
+    onClick={deleteHistory}
+  >
+    Delete History
+  </button>
+</div>
+)}
     </div>
   );
 }
