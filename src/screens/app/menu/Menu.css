@@ -58,3 +58,123 @@ color: #F4560A;
    outline: none;
 
 }
+
+
+/* Large Laptop */
+@media (min-width:1280px) and (max-width:1650px){
+
+    .menu-container{
+        padding: 0 30px;
+        gap: 30px;
+    }
+
+    .menu-sidebar{
+        min-width: 18%;
+    }
+
+    .menu-content{
+        padding: 0 20px;
+        width: 100%;
+    }
+
+}
+
+
+/* Laptop */
+@media (min-width:769px) and (max-width:1279px){
+
+    .menu-container{
+        padding: 0 20px;
+        gap: 20px;
+    }
+
+    .menu-sidebar{
+        min-width: 25%;
+    }
+
+    .menu-content{
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .menusidebar-link{
+        padding: 12px 15px;
+        font-size: 17px;
+    }
+
+}
+
+
+/* Tablet */
+@media (min-width:481px) and (max-width:768px){
+
+    .menu-container{
+        flex-direction: column;
+        padding: 20px;
+        gap: 30px;
+    }
+
+    .menu-sidebar{
+        min-width: 100%;
+        height: auto;
+    }
+
+    .menusidebar-list{
+        margin-top: 20px;
+    }
+
+    .menu-content{
+        width: 100%;
+        padding: 0;
+    }
+
+}
+
+
+/* Mobile */
+@media (min-width:310px) and (max-width:480px){
+
+    .menu-container{
+        flex-direction: column;
+        padding: 15px;
+        gap: 25px;
+        margin-top: 20px;
+    }
+
+    .menu-sidebar{
+        min-width: 100%;
+        height: auto;
+    }
+
+    .menu-sidebar h1{
+        text-align: center;
+        font-size: 28px;
+    }
+
+    .menusidebar-list{
+        margin-top: 20px;
+    }
+
+    .menusidebar-link{
+        padding: 12px 15px;
+        font-size: 16px;
+    }
+
+    .menusidebar-p{
+        font-size: 14px;
+        min-width: 24px;
+        text-align: center;
+    }
+
+    .menu-content{
+        width: 100%;
+        padding: 0;
+    }
+
+    .menu-content-input{
+        width: 100%;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+}

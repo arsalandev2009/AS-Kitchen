@@ -101,3 +101,138 @@ height: 18px;
     gap: 10px;
     font-size: 20px;
 }
+
+
+/* Large Laptop */
+@media (min-width:1280px) and (max-width:1650px){
+
+    .checkout-form-container{
+        width: 85%;
+    }
+
+}
+
+
+/* Laptop */
+@media (min-width:769px) and (max-width:1279px){
+
+    .checkout-form-container{
+        width: 90%;
+    }
+
+    .payment-options{
+        gap: 30px;
+    }
+
+}
+
+
+/* Tablet */
+@media (min-width:481px) and (max-width:768px){
+
+    .checkout-form-container{
+        width: 92%;
+        padding: 25px;
+        box-sizing: border-box;
+    }
+
+    .checkout-form-title{
+        text-align: center;
+    }
+
+    .payment-options{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .payment-option-easypaisa{
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .payment-ss{
+        font-size: 18px;
+    }
+
+}
+
+
+/* Mobile */
+@media (min-width:310px) and (max-width:480px){
+
+    .checkout-form-container{
+        width: 95%;
+        margin: 20px auto;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    .checkout-form-title{
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .checkout-form{
+        gap: 15px;
+    }
+
+    .checkout-label{
+        font-size: 15px;
+    }
+
+    .checkout-input,
+    .checkout-textarea{
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    .checkout-textarea{
+        height: 100px;
+    }
+
+    .payment-options{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .payment-option{
+        font-size: 15px;
+    }
+
+    .payment-option-easypaisa{
+        width: 100%;
+        padding: 12px;
+        box-sizing: border-box;
+        gap: 15px;
+        font-size: 15px;
+    }
+
+    .payment-option-easypaisa img{
+        width: 30px;
+    }
+
+    .payment-option-easypaisa-p{
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .payment-option-easypaisa-p1{
+        font-size: 15px;
+    }
+
+    .payment-ss{
+        font-size: 16px;
+        gap: 8px;
+    }
+
+    .payment-ss-input{
+        width: 100%;
+    }
+
+    .checkout-submit-btn{
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+}

@@ -69,3 +69,152 @@ a{
     gap: 5px;
     font-size: 20px;
 }
+
+/* Large Laptop */
+@media (min-width:1280px) and (max-width:1650px){
+
+    .footer-container-inner{
+        width: 90%;
+    }
+
+    .footer-container-upper{
+        gap: 30px;
+    }
+
+}
+
+
+/* Laptop */
+@media (min-width:769px) and (max-width:1279px){
+
+    .footer-container-inner{
+        width: 90%;
+    }
+
+    .footer-container-upper{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 50px;
+    }
+
+    .footer-container-hr1{
+        display: none;
+    }
+
+}
+
+
+/* Tablet */
+@media (min-width:481px) and (max-width:768px){
+
+    .footer-container{
+        padding: 40px 20px;
+    }
+
+    .footer-container-inner{
+        width: 100%;
+    }
+
+    .footer-container-upper{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .footer-container-upper-box1{
+        align-items: center;
+    }
+
+    .footer-container-upper-box1-links{
+        justify-content: center;
+    }
+
+    .footer-container-upper-ul{
+        align-items: center;
+    }
+
+    .footer-container-upper-li{
+        justify-content: center;
+    }
+
+    .footer-container-hr1{
+        display: none;
+    }
+
+    .footer-container-lower{
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        font-size: 18px;
+    }
+
+}
+
+
+/* Mobile */
+@media (min-width:310px) and (max-width:480px){
+
+    .footer-container{
+        padding: 30px 15px;
+    }
+
+    .footer-container-inner{
+        width: 100%;
+    }
+
+    .footer-container-upper{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 35px;
+    }
+
+    .footer-container-upper-box1{
+        align-items: center;
+    }
+
+    .footer-container-upper-box1 img{
+        width: 180px;
+    }
+
+    .footer-container-upper-box1-p{
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .footer-container-upper-box1-links{
+        justify-content: center;
+    }
+
+    .footer-container-upper-ul{
+        align-items: center;
+        gap: 18px;
+    }
+
+    .footer-container-upper-li{
+        justify-content: center;
+    }
+
+    .footer-container-hr1{
+        display: none;
+    }
+
+    .footer-container-lower{
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        font-size: 15px;
+    }
+
+}
+
+
+
+@media (min-width:1280px) and (max-width:1650px){}
+
+@media (min-width:769px) and (max-width:1279px){}
+
+@media (min-width:481px) and (max-width:768px){}
+
+@media (min-width:310px) and (max-width:480px){}

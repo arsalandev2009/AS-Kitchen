@@ -74,6 +74,8 @@ window.location.reload()
   </button>
 </div>
 )}
+
+<div><Footer/></div>
     </div>
   );
 }

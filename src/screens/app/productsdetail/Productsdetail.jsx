@@ -98,7 +98,7 @@ const handleCart = () => {
       <div className="productdetails-suggestion">
             {HomeProductsCardData.map((items) => (
               <Link to={'/menu'} key={items.key} className="productsdetails-suggestion-cards">
-                <div className="productsdetails-suggestion-cards-image"><img src={items.image} alt={items.name} width={280}/></div>
+                <div className="productsdetails-suggestion-cards-image"><img className="productsdetail-suggestion-cards-img" src={items.image} alt={items.name} width={280}/></div>
                 <div className="productsdetails-suggestion-lower">
                   <h2 className="productsdetails-suggestion-cards-h2"> {items.name}</h2>
                 <h4 className="productsdetails-suggestion-cards-p">Rs: {items.price}</h4>
