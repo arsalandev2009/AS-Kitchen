@@ -56,10 +56,10 @@ setShow(!show)
         <ul className='header-right-ul'>
             <li className='header-right-ul'><NavLink className='header-right-link' to='/'>Home</NavLink></li>
             <li className='header-right-ul'><NavLink className='header-right-link' to='/menu'>Menu</NavLink></li>
-            <li className='header-right-ul'><NavLink className='header-right-link' to='/aboutus'>About Us</NavLink></li>
-            <li className='header-right-ul'><NavLink className='header-right-link' to='/contact'>Contact</NavLink></li>
-            <li className='header-right-ul'>  <button className='header-right-button' onClick={handleCartButton}> <HiOutlineShoppingCart/> Cart ( {cartdatalength} )</button></li>
-            <li className='header-right-ul'>  <button className='header-right-button-user' onClick={handleClickUser}><FiMenu size={30}/> </button></li>
+            {/* <li className='header-right-ul'><NavLink className='header-right-link' to='/aboutus'>About Us</NavLink></li>
+            <li className='header-right-ul'><NavLink className='header-right-link' to='/contact'>Contact</NavLink></li> */}
+            <li className='header-right-ul'>  <button className='header-right-button' onClick={handleCartButton}> <HiOutlineShoppingCart className='header-cart-icon'  size={25}/> ( {cartdatalength} )</button></li>
+            <li className='header-right-ul'>  <button className='header-right-button-user' onClick={handleClickUser}><FiMenu className='header-menu-icon' size={30}/> </button></li>
 
 {show && 
 (token ?
