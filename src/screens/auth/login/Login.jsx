@@ -6,12 +6,22 @@ function Login() {
 
   const navigate=useNavigate()
   
+  const [formData,setFormData]=useState({email:'',password:''})
 
 // const userdata = localStorage.getItem("user")
 
+const handleChange=(e)=>{
 
-const handleSubmit = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+
+
+}
+
+  const handleSubmit = (e) => {
   e.preventDefault();
+
+
+
 
   const userdata = JSON.parse(localStorage.getItem("user"));
 if (!userdata) {
@@ -26,12 +36,13 @@ if (!userdata) {
   if (email !== userdata.email && password !== userdata.password) {
     alert("Email is incorrect");
     return;
+  }else{
+    navigate('/')
+    alert('logedin')
   }
 
 
   localStorage.setItem("token", "loggedin");
-  alert("Login Successfully");
-  navigate("/menu");
 };
 
   return (
@@ -45,6 +56,7 @@ if (!userdata) {
           placeholder="Enter Email"
           className="login-input"
           required
+          onChange={handleChange}
         />
 
         <input
@@ -52,7 +64,7 @@ if (!userdata) {
           name="password"
           placeholder="Enter Password"
           className="login-input"
-          
+          onChange={handleChange}
           required
         />
 

@@ -88,3 +88,56 @@
   color: #666;
   font-size: 18px;
 }
+.error-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.error-popup {
+  width: 320px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 22px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.error-popup-title {
+  margin: 0 0 12px;
+  color: #e53935;
+}
+
+.error-popup-message {
+  margin-bottom: 22px;
+  color: #555;
+  word-break: break-word;
+}
+
+.error-popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.error-popup-ok-btn {
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  background: #1877f2;
+  color: #fff;
+  transition: 0.2s;
+}
+
+.error-popup-ok-btn:hover {
+  background: #166fe5;
+}

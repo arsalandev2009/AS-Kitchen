@@ -1,9 +1,17 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./Signup.css";
 import { FaEye, FaRegEyeSlash } from "react-icons/fa";
+import "./Signup.css";
 
 function Signup() {
+
+  const [errorMessageBox,setErrorMessageBox]=useState(false)
+const [errorMessage,setErrorMessage]=useState('')
+
+  const handleErrorBox=()=>{
+    setErrorMessageBox(false)
+  }
+
   const navigate = useNavigate();
   const [seepass,setSeepass]=useState(false)
   const [seepassconfirm,setSeepassconfirm]=useState(false)
@@ -15,8 +23,7 @@ const handleSeepassconfirm=()=>{
 }
 
 
-
-  const [data, setData] = useState({
+  const [signupData, setSignupData] = useState({
     username: "",
     email: "",
     password: "",
@@ -24,22 +31,31 @@ const handleSeepassconfirm=()=>{
   });
 
   const handleChange = (e) => {
-    setData({ ...data, [e.target.name]: e.target.value });
+    setSignupData({ ...signupData, [e.target.name]: e.target.value });
     
   };
 
-  const handleSubmit = (e) => {
+ const  handleSubmit=(e) =>{
     e.preventDefault();
 
-    if (data.password !== data.confirmpassword) {
+    // const {data,error} = await supabase.auth.signUp({email: signupData.email,password: signupData.password,options: {data: {name: signupData.name,}}})
+
+    // if(error){
+    //   setErrorMessageBox(true)
+    //   setErrorMessage(error.message)
+    // }else{
+    //   alert('Signup Succesfully')
+    // }
+    if (signupData.password !== signupData.confirmpassword) {
       alert("Passwords do not match");
       return;
     }
-
-    localStorage.setItem("user", JSON.stringify(data));
+    
+    localStorage.setItem("user", JSON.stringify(signupData));
     alert("Account Created Successfully");
+       navigate("/login");
 
-    navigate("/login");
+   
   };
 
   return (
@@ -125,6 +141,29 @@ const handleSeepassconfirm=()=>{
           </Link>
         </p>
       </form>
+
+
+<div>
+  {errorMessageBox && (
+    <div className="error-popup-overlay">
+      <div className="error-popup">
+        <h3 className="error-popup-title">Error</h3>
+
+        <p className="error-popup-message">{errorMessage}</p>
+
+        <div className="error-popup-buttons">
+          <button
+            onClick={handleErrorBox}
+            className="error-popup-ok-btn"
+          >
+            OK
+          </button>
+        </div>
+      </div>
+    </div>
+  )}
+</div>
+
     </div>
   );
 }
